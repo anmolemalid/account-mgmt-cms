@@ -12,29 +12,61 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Title": {
-      "type": "text"
+    "title": {
+      "type": "string"
     },
-    "QuickSummary": {
+    "quickSummary": {
       "type": "customField",
       "options": {
         "preset": "toolbarBalloon"
       },
       "customField": "plugin::ckeditor5.CKEditor"
     },
-    "Detail1": {
+    "detail1": {
       "type": "customField",
       "options": {
         "preset": "toolbarBalloon"
       },
       "customField": "plugin::ckeditor5.CKEditor"
     },
-    "Detail2": {
+    "detail2": {
       "type": "customField",
       "options": {
         "preset": "toolbarBalloon"
       },
       "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "description": {
+      "type": "customField",
+      "options": {
+        "preset": "toolbarBalloon"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "readTime": {
+      "type": "string"
+    },
+    "bannerimg": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "topics": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::blog-topic.blog-topic",
+      "inversedBy": "blogs"
+    },
+    "author": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::author.author"
     }
   }
 }
