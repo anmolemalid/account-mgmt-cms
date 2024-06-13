@@ -375,6 +375,11 @@ export interface ApiAuthorAuthor extends Schema.CollectionType {
   attributes: {
     Name: Attribute.String;
     ProfilePic: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    blogs: Attribute.Relation<
+      'api::author.author',
+      'oneToMany',
+      'api::blog.blog'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -443,7 +448,7 @@ export interface ApiBlogBlog extends Schema.CollectionType {
     >;
     author: Attribute.Relation<
       'api::blog.blog',
-      'oneToOne',
+      'manyToOne',
       'api::author.author'
     >;
     createdAt: Attribute.DateTime;
