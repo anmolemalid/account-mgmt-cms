@@ -36,13 +36,6 @@
       },
       "customField": "plugin::ckeditor5.CKEditor"
     },
-    "description": {
-      "type": "customField",
-      "options": {
-        "preset": "toolbarBalloon"
-      },
-      "customField": "plugin::ckeditor5.CKEditor"
-    },
     "readTime": {
       "type": "string"
     },
@@ -87,6 +80,9 @@
       ]
     },
     "keywords": {
+      "type": "text"
+    },
+    "description": {
       "type": "text"
     }
   }

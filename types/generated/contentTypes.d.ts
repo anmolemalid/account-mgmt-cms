@@ -433,13 +433,6 @@ export interface ApiBlogBlog extends Schema.CollectionType {
           preset: 'toolbarBalloon';
         }
       >;
-    description: Attribute.RichText &
-      Attribute.CustomField<
-        'plugin::ckeditor5.CKEditor',
-        {
-          preset: 'toolbarBalloon';
-        }
-      >;
     readTime: Attribute.String;
     bannerimg: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     topics: Attribute.Relation<
@@ -456,6 +449,7 @@ export interface ApiBlogBlog extends Schema.CollectionType {
     ogDescription: Attribute.String;
     ogImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     keywords: Attribute.Text;
+    description: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
