@@ -368,13 +368,14 @@ export interface ApiAuthorAuthor extends Schema.CollectionType {
     singularName: 'author';
     pluralName: 'authors';
     displayName: 'Author';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    Name: Attribute.String;
-    ProfilePic: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    name: Attribute.String;
+    profilePic: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     blogs: Attribute.Relation<
       'api::author.author',
       'oneToMany',
@@ -451,10 +452,10 @@ export interface ApiBlogBlog extends Schema.CollectionType {
       'manyToOne',
       'api::author.author'
     >;
-    OgTitle: Attribute.String;
-    OgDescription: Attribute.String;
-    ContentTypes: Attribute.String;
-    OgImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    ogTitle: Attribute.String;
+    ogDescription: Attribute.String;
+    contentTypes: Attribute.String;
+    ogImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

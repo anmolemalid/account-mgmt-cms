@@ -69,24 +69,25 @@
       "target": "api::author.author",
       "inversedBy": "blogs"
     },
-    "OgTitle": {
+    "ogTitle": {
       "type": "string"
     },
-    "OgDescription": {
+    "ogDescription": {
       "type": "string"
     },
-    "ContentTypes": {
+    "contentTypes": {
       "type": "string"
     },
-    "OgImage": {
+    "ogImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     }
   }
 }
