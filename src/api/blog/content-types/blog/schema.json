@@ -68,6 +68,25 @@
       "relation": "manyToOne",
       "target": "api::author.author",
       "inversedBy": "blogs"
+    },
+    "OgTitle": {
+      "type": "string"
+    },
+    "OgDescription": {
+      "type": "string"
+    },
+    "ContentTypes": {
+      "type": "string"
+    },
+    "OgImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

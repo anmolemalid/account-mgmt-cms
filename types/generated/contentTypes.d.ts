@@ -451,6 +451,10 @@ export interface ApiBlogBlog extends Schema.CollectionType {
       'manyToOne',
       'api::author.author'
     >;
+    OgTitle: Attribute.String;
+    OgDescription: Attribute.String;
+    ContentTypes: Attribute.String;
+    OgImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
