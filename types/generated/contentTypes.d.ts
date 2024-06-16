@@ -454,8 +454,8 @@ export interface ApiBlogBlog extends Schema.CollectionType {
     >;
     ogTitle: Attribute.String;
     ogDescription: Attribute.String;
-    contentTypes: Attribute.String;
     ogImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    keywords: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

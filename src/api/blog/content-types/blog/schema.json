@@ -75,9 +75,6 @@
     "ogDescription": {
       "type": "string"
     },
-    "contentTypes": {
-      "type": "string"
-    },
     "ogImage": {
       "type": "media",
       "multiple": false,
@@ -88,6 +85,9 @@
         "videos",
         "audios"
       ]
+    },
+    "keywords": {
+      "type": "text"
     }
   }
 }
