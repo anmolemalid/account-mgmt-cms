@@ -935,6 +935,7 @@ export interface ApiFaqFaq extends Schema.CollectionType {
     singularName: 'faq';
     pluralName: 'faqs';
     displayName: 'FAQ';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -948,6 +949,11 @@ export interface ApiFaqFaq extends Schema.CollectionType {
           preset: 'toolbarBalloon';
         }
       >;
+    category: Attribute.Relation<
+      'api::faq.faq',
+      'manyToOne',
+      'api::faq-category.faq-category'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -970,6 +976,11 @@ export interface ApiFaqCategoryFaqCategory extends Schema.CollectionType {
   };
   attributes: {
     name: Attribute.String;
+    faqs: Attribute.Relation<
+      'api::faq-category.faq-category',
+      'oneToMany',
+      'api::faq.faq'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

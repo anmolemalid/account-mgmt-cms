@@ -13,6 +13,12 @@
   "attributes": {
     "name": {
       "type": "string"
+    },
+    "faqs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::faq.faq",
+      "mappedBy": "category"
     }
   }
 }
