@@ -929,6 +929,65 @@ export interface ApiBlogTopicBlogTopic extends Schema.CollectionType {
   };
 }
 
+export interface ApiFaqFaq extends Schema.CollectionType {
+  collectionName: 'faqs';
+  info: {
+    singularName: 'faq';
+    pluralName: 'faqs';
+    displayName: 'FAQ';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    ques: Attribute.String;
+    ans: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbarBalloon';
+        }
+      >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::faq.faq', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::faq.faq', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiFaqCategoryFaqCategory extends Schema.CollectionType {
+  collectionName: 'faq_categories';
+  info: {
+    singularName: 'faq-category';
+    pluralName: 'faq-categories';
+    displayName: 'FAQCategory';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::faq-category.faq-category',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::faq-category.faq-category',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -950,6 +1009,8 @@ declare module '@strapi/types' {
       'api::author.author': ApiAuthorAuthor;
       'api::blog.blog': ApiBlogBlog;
       'api::blog-topic.blog-topic': ApiBlogTopicBlogTopic;
+      'api::faq.faq': ApiFaqFaq;
+      'api::faq-category.faq-category': ApiFaqCategoryFaqCategory;
     }
   }
 }
